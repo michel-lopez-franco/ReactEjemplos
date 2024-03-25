@@ -2,7 +2,12 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 
 
-const createButton = ({text}) => {
+//PascalCase -> for react components
+//camelCase
+//snake_case
+//kebab-case
+
+const Button = ({text}) => {
   
   return (<button>
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -16,9 +21,9 @@ const createButton = ({text}) => {
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.Fragment>
 
-      {createButton({ text: 'Button 1' })}
-      {createButton({ text: 'Button 2' })}
-      {createButton({text: 'Button 3' })}
+      <Button text='Button 1' />
+      <Button text='Button 2' />
+      <Button text='Button 3' />
 
     </React.Fragment>
 )
