@@ -9,6 +9,7 @@
     align-items: center;
     font-size: .8rem;
     gap: 12px;
+    justify-content: space-between;
 }
 
 .tw-followCard-header {
@@ -58,5 +59,14 @@
     flex-direction: column;
     margin-left: 8px;
     gap: 4px;
+    
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+    background-color: #434c52;
     
 }
