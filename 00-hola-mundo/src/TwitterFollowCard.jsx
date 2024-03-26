@@ -1,15 +1,11 @@
 import {useState} from 'react';
 
+// eslint-disable-next-line react/prop-types
 export function TwitterFollowCard({children, formatUserName, userName, name, url, isFollowing}) {
     
     const [isFollow,setIsFollow] = useState(isFollowing);
 
-    /* Equivalente a lo de arriba
-    const state = useState(false);
-    const isFollowing = state[0];
-    const setIsFollowing = state[1];
-    */
-    const text = isFollow ? 'Unfollow' : 'Follow';
+    const text = isFollow ? 'Following' : 'Follow';
     
     const buttonClassName = isFollow 
         ? 'tw-followCard-button is-following' 
@@ -18,17 +14,7 @@ export function TwitterFollowCard({children, formatUserName, userName, name, url
     const handleClick= () => {
         setIsFollow(!isFollow);
     }
-
-    // Mostrar el estado inicial isFollowing cuando se renderiza el componente
-    // se tiene que refrescar el navegador, la prop se modifica el cambio se guarda en el estado
-    // pero no se refleja en el componente, 
-    console.log('------------------------------------')
-    console.log('children', children);
-    console.log('Name', name);
-    console.log('isFollow', isFollow);
-    console.log('isFollowing', isFollowing);
-    console.log('------------------------------------')
-
+    
     return (
         <article className='tw-followCard'>
             <header className='tw-followCard-header'>
@@ -46,11 +32,13 @@ export function TwitterFollowCard({children, formatUserName, userName, name, url
             <aside className='tw-followCard-aside'>
                 
                 <button className={buttonClassName} onClick={handleClick}>
-                    {text}
+                    
+                    <span className='tw-followCard-text'>{text}</span>
+                    <span className='tw-followCard-stopFollow'>Stop following</span>
                 </button>
                 
             </aside>
         </article>
-    );
+    )
 }
-//https://mighty.tools/mockmind-api/content/human/49.jpg
+
