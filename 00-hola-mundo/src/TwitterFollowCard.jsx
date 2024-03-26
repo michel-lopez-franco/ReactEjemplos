@@ -1,6 +1,6 @@
 
 
-export function TwitterFollowCard({formatUserName, userName, name, url, isFollowing}) {
+export function TwitterFollowCard({children, formatUserName, userName, name, url, isFollowing}) {
     
     //const addAt = (userName) =>`@${userName}`; 
     
@@ -37,7 +37,7 @@ export function TwitterFollowCard({formatUserName, userName, name, url, isFollow
                 alt="Michel logo" 
                 />
                 <div className='tw-followCard-info'>
-                    <strong className='tw-followCard-infoName'>{name} </strong>
+                    <strong className='tw-followCard-infoName'>{children || name} </strong>
                     <span className='tw-followCard-infoUserName'>{formatUserName(userName)}</span>
                 </div>
             </header>

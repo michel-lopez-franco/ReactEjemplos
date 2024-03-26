@@ -5,6 +5,23 @@ import { TwitterFollowCard } from './TwitterFollowCard';
 export function App() {
     const format = (userName) =>`@${userName}`; 
 
+    const human43 = {
+        formatUserName: format,             
+        name: 'Human 43', 
+        userName: 'Human 43',
+        url: 'https://mighty.tools/mockmind-api/content/human/43.jpg',
+        isFollowing : true 
+    };
+
+    const human68 = {
+        formatUserName: format,             
+        
+        userName: 'Human 68',
+        url: 'https://mighty.tools/mockmind-api/content/human/68.jpg',
+        isFollowing : true 
+    };
+
+    
     return (
         <section className='App'>
         
@@ -14,23 +31,18 @@ export function App() {
             userName={'Human 49'} 
             url={'https://mighty.tools/mockmind-api/content/human/49.jpg'}
             isFollowing = {false}
-        />
+        >
+            Esto es el hijo de Human 49
+        </TwitterFollowCard>
 
-        <TwitterFollowCard
-            formatUserName= {format}             
-            name= {'Human 43'} 
-            userName={'Human 43'} 
-            url={'https://mighty.tools/mockmind-api/content/human/43.jpg'}
-            isFollowing 
-        />        
+        <TwitterFollowCard {...human43}/>        
 
-        <TwitterFollowCard 
-            formatUserName= {format} 
-            name= {'Human 68'} 
-            userName={'Human 68'} 
-            url={'https://mighty.tools/mockmind-api/content/human/68.jpg'}
-            isFollowing={true}
-        /> 
+        <TwitterFollowCard {...human68}> 
+            Human 68
+        </TwitterFollowCard> 
+
+        
+
         <TwitterFollowCard
             formatUserName= {format} 
             name= {'Human a Human 28'} 
