@@ -14,8 +14,7 @@ export function App() {
     };
 
     const human68 = {
-        formatUserName: format,             
-        
+        formatUserName: format,                   
         userName: 'Human 68',
         url: 'https://mighty.tools/mockmind-api/content/human/68.jpg',
         isFollowing : true 
